@@ -4,6 +4,9 @@ BUILD_DIR = "build"
 clean:
 	rm -rf .repo
 
+# =================================
+# Init instructions from: https://docs.sel4.systems/projects/sel4test/
+# =================================
 .PHONY: init
 init:
 	# Initialise the repo manifest in the `$(XAVIER_PORT_IVAN_DIR)` directory.
@@ -11,6 +14,9 @@ init:
 	# Sync the repo manifest.
 	repo sync
 
+# =================================
+# Build instructions from: https://docs.sel4.systems/projects/sel4test/
+# =================================
 .PHONY: build
 build:
 	# Create a build directory if it doesn't exist already
