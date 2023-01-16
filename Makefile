@@ -1,3 +1,4 @@
+BUILD_DIR = "build"
 
 .PHONY: clean
 clean:
@@ -10,3 +11,11 @@ init:
 	# Sync the repo manifest.
 	repo sync
 
+.PHONY: build
+build:
+	# Create a build directory if it doesn't exist already
+	mkdir -p $(BUILD_DIR)
+	# Run the init-build.sh script
+	cd $(BUILD_DIR) && ../init-build.sh -DPLATFORM=xavier
+	# Run ninja
+	cd $(BUILD_DIR) && ninja
