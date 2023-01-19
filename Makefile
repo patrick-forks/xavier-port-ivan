@@ -21,7 +21,9 @@ init:
 build:
 	# Create a build directory if it doesn't exist already
 	mkdir -p $(BUILD_DIR)
+#	# Run the init-build.sh script
+#	cd $(BUILD_DIR) && ../init-build.sh -DPLATFORM=xavier
 	# Run the init-build.sh script
-	cd $(BUILD_DIR) && ../init-build.sh -DPLATFORM=xavier
+	cd $(BUILD_DIR) && ../init-build.sh -DPLATFORM=xavier -DSIMULATION=1
 	# Run ninja
 	cd $(BUILD_DIR) && ninja
