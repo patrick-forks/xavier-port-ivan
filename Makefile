@@ -2,7 +2,7 @@ BUILD_DIR = "build"
 
 .PHONY: clean
 clean:
-	rm -rf .repo
+	rm -rf $(BUILD_DIR)
 
 # =================================
 # Init instructions from: https://docs.sel4.systems/projects/sel4test/
