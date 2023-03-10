@@ -1,0 +1,73 @@
+   reserved-memory {
+                #address-cells = <0x02>;
+                #size-cells = <0x02>;
+                ranges;
+
+                fb0_carveout {
+                        reg-names = "surface\0lut";
+                        reg = <0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+                        phandle = <0x235>;
+                        no-map;
+                };
+
+                fb1_carveout {
+                        reg-names = "surface\0lut";
+                        reg = <0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+                        phandle = <0x236>;
+                        no-map;
+                };
+
+                generic_carveout {
+                        alignment = <0x00 0x100000>;
+                        alloc-ranges = <0x01 0x00 0x01 0x00>;
+                        compatible =    "nvidia,generic_carveout";
+                      compatible = "nvidia,camdbg_carveout";
+                        size = size = <0x00 0x00>;
+                        status = "disabled";
+                        phandle = <0x27e>;
+                        no-map;
+                };
+                fb2_carveout {
+                        reg-names = "surface\0lut";
+                        reg = <0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+                        phandle = <0x237>;
+                        no-map;
+                };
+
+                vpr-carveout {
+                        compatible = "nvidia,vpr-carveout";
+                        status = "okay";
+                        reg = <0x00 0xce000000 0x00 0x2a000000>;
+                        phandle = <0x27f>;
+                        };
+
+           camdbg_carveout {
+                        alignment = <0x00 0x100000>;
+                        alloc-ranges = <0x01 0x00 0x01 0x00>;
+                        compatible = "nvidia,camdbg_carveout";
+                        size = <0x00 0x6400000>;
+                        status = "disabled";
+                        phandle = <0x3e1>;
+                };
+
+
+                fb3_carveout {
+                        reg-names = "surface\0lut";
+                        reg = <0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+                        phandle = <0x238>;
+                        no-map;
+                };
+
+                ramoops_carveout {
+                        alignment = <0x00 0x10000>;
+                        record-size = <0x10000>;
+                        alloc-ranges = <0x00 0x00 0x01 
+ 0x00>;
+                        compatible = "ramoops";
+                        size = <0x00 0x200000>;
+                        console-size = <0x80000>;
+                        status = "okay";
+                        phandle = <0x3e3>;
+                        no-map;
+             };
+        };
